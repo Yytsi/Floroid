@@ -31,7 +31,7 @@ class Floroid(object):
             "G": "else",
             "H": "or ",
             "I": "in ",
-            "J": "split",
+            "J": "split()",
             "K": "for",
             "L": "input()",
             "M": "and ",
@@ -135,7 +135,8 @@ class Floroid(object):
             "fj": "end",
             "fk": "upper",
             "fl": "lower",
-            "fm": "count"
+            "fm": "count",
+            "fn": "split"
         }
 
         parsed = self.sourceCode # The (result) parsed string.
