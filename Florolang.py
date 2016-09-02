@@ -129,7 +129,8 @@ class Floroid(object):
             "fd": "functions.toASCIICodes",
             "fe": "functions.deleteAt",
             "ff": "functions.first",
-            "fg": "functions.last"
+            "fg": "functions.last",
+            "fh": "find"
         }
 
         parsed = self.sourceCode # The (result) parsed string.
