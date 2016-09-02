@@ -104,7 +104,7 @@ class Floroid(object):
             "di": "math.pi",
             "dj": "math.floor",
             "dk": "math.factorial",
-            "dl": "math.cos",
+            "dl": "math.tan",
             "dm": "math.sin",
             "dn": "math.cos",
             "do": "math.log",
