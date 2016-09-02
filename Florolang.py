@@ -133,8 +133,8 @@ class Floroid(object):
             "fh": "find",
             "fi": "key",
             "fj": "end",
-            "fk": "upper",
-            "fl": "lower",
+            "fk": "upper()",
+            "fl": "lower()",
             "fm": "count",
             "fn": "split"
         }
