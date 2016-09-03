@@ -5,6 +5,6 @@ Import the Florolang module to run Floroid-code. Florolang module imports the 'f
 
     import Florolang;
     interpreter = Florolang.Floroid("z(fg([1,2,3]))")
-    interpreter.run()
+    exec(interpreter.parse())
 
 Output: 3
