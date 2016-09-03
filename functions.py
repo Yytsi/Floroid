@@ -149,7 +149,13 @@ def getPermutationOnIndex(sequence, index):
         del S[i]
     return tuple(permutation)
 
-def toASCIICodes(iterable): return [ord(char) for char in iterable]
+def toASCIICodes(iterable): return [ord(char) for char in list(iterable)]
 def deleteAt(lst, index): return lst[:index] + lst[index + 1:]
-def first(iterable): return iterable[0]
-def last(iterable): return iterable[::-1][0]
+def first(iterable): return list(iterable)[0]
+def last(iterable): return list(iterable)[::-1][0]
+def highest(iterable): return max(list(iterable))
+def lowest(iterable): return min(list(iterable))
+
+def lcm(a,b): return abs(a * b) / fractions.gcd(a,b) if a and b else 0
+def lcmm(args): return functools.reduce(lcm, list(args))
+def gcdm(args): return functools.reduce(fractions.gcd, list(args))
