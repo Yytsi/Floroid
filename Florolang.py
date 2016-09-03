@@ -143,8 +143,7 @@ class Floroid(object):
             "ga": "fractions.gcd",
             "gb": "functions.lcm",
             "gc": "functions.lcmm",
-            "gd": "fractions.gcd",
-            "ge": "functions.gcdm",
+            "ge": "functions.gcdm"
             "gf": "functions.lowest",
             "gg": "functions.highest"
         }
