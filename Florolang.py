@@ -145,7 +145,8 @@ class Floroid(object):
             "gc": "functions.lcmm",
             "ge": "functions.gcdm",
             "gf": "functions.lowest",
-            "gg": "functions.highest"
+            "gg": "functions.highest",
+            "gh": "sep"
         }
 
         parsed = self.sourceCode # The (result) parsed string.
