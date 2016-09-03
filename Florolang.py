@@ -22,7 +22,7 @@ class Floroid(object):
             "v": " int ",
             "w": " range ",
             "x": " ord ",
-            "y": " join ",
+            "y": "join ",
             "z": "print",
             "A": "def ",
             "B": "lambda ",
