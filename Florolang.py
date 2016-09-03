@@ -3,6 +3,7 @@ import itertools
 import math
 import functools
 import fractions
+import string
 
 class Floroid(object):
     def __init__(self, sourceCode):
