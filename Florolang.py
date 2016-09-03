@@ -35,7 +35,7 @@ class Floroid(object):
             "I": " in ",
             "J": "split()",
             "K": "for ",
-            "L": "input()",
+            "L": " input()",
             "M": " and ",
             "N": "while ",
             "O": " str",
