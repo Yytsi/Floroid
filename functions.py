@@ -1,8 +1,11 @@
 # This is a module containing functions for the language Floroid.
 # Some code taken from the internet and the rest written by me.
-# Not by any means meant to be readable.
 
-from math import*
+import math
+import fractions
+import functools
+import itertools
+import operator
 
 # Prime functions
 def isPrime(n):
@@ -53,10 +56,10 @@ def sieveOfAtkin(end):
     lng = ((end-1) // 2)
     sieve = [False] * (lng + 1)
 
-    x_max, x2, xd = int(sqrt((end-1)/4.0)), 0, 4
+    x_max, x2, xd = int(math.sqrt((end-1)/4.0)), 0, 4
     for xd in range(4, 8*x_max + 2, 8):
         x2 += xd
-        y_max = int(sqrt(end-x2))
+        y_max = int(math.sqrt(end-x2))
         n, n_diff = x2 + y_max*y_max, (y_max << 1) - 1
         if not (n & 1):
             n -= n_diff
@@ -68,10 +71,10 @@ def sieveOfAtkin(end):
                 sieve[m] = not sieve[m]
             n -= d
 
-    x_max, x2, xd = int(sqrt((end-1) / 3.0)), 0, 3
+    x_max, x2, xd = int(math.sqrt((end-1) / 3.0)), 0, 3
     for xd in range(3, 6 * x_max + 2, 6):
         x2 += xd
-        y_max = int(sqrt(end-x2))
+        y_max = int(math.sqrt(end-x2))
         n, n_diff = x2 + y_max*y_max, (y_max << 1) - 1
         if not(n & 1):
             n -= n_diff
@@ -82,11 +85,11 @@ def sieveOfAtkin(end):
                 sieve[m] = not sieve[m]
             n -= d
 
-    x_max, y_min, x2, xd = int((2 + sqrt(4-8*(1-end)))/4), -1, 0, 3
+    x_max, y_min, x2, xd = int((2 + math.sqrt(4-8*(1-end)))/4), -1, 0, 3
     for x in range(1, x_max + 1):
         x2 += xd
         xd += 6
-        if x2 >= end: y_min = (((int(ceil(sqrt(x2 - end))) - 1) << 1) - 2) << 1
+        if x2 >= end: y_min = (((int(ceil(math.sqrt(x2 - end))) - 1) << 1) - 2) << 1
         n, n_diff = ((x*x + x) << 1) - 1, (((x-1) << 1) - 2) << 1
         for d in range(n_diff, y_min, -8):
             if n % 12 == 11:
@@ -98,7 +101,7 @@ def sieveOfAtkin(end):
     if end <= 3:
         return primes[:max(0,end-2)]
 
-    for n in range(5 >> 1, (int(sqrt(end))+1) >> 1):
+    for n in range(5 >> 1, (int(math.sqrt(end))+1) >> 1):
         if sieve[n]:
             primes.append((n << 1) + 1)
             aux = (n << 1) + 1
@@ -106,7 +109,7 @@ def sieveOfAtkin(end):
             for k in range(aux, end, 2 * aux):
                 sieve[k >> 1] = False
 
-    s  = int(sqrt(end)) + 1
+    s  = int(math.sqrt(end)) + 1
     if s  % 2 == 0:
         s += 1
     primes.extend([i for i in range(s, end, 2) if sieve[i >> 1]])
@@ -159,3 +162,30 @@ def lowest(iterable): return min(list(iterable))
 def lcm(a,b): return abs(a * b) / fractions.gcd(a,b) if a and b else 0
 def lcmm(args): return functools.reduce(lcm, list(args))
 def gcdm(args): return functools.reduce(fractions.gcd, list(args))
+def mod10(n): return n % 10
+
+# Mainly short conversions..
+def pureHex(n): return hex(n)[2:]
+def pureBin(n): return bin(n)[2:]
+def pureHexInt(n): return int(pureHex(n))
+def pureBinInt(n): return int(pureBin(n))
+def fromHexStr(n): return int(n, 16)
+def fromBinStr(n): return int(n, 2)
+
+def product(*iterables, repeat=1): return list(itertools.product(iterables, repeat))
+def permutations(iterable, r=None): return list(itertools.permutations(iterable, r))
+def combinations(iterable, r): return list(itertools.combinations(iterable, r))
+def combinations_with_replacement(iterable, r): return list(itertools.combinations(iterable, r))
+def accumulate(iterable, func=operator.add): return list(itertools.accumulate(iterable, func))
+def chain(*iterables): return list(itertools.chain(iterables))
+def chainFromIterable(iterable): return list(itertools.chain.from_iterable(iterable))
+def compress(data, selectors): return list(itertools.compress(data, selectors))
+def dropwhile(predicate, iterable): return list(itertools.dropwhile(predicate, iterable))
+def filterfalse(predicate, iterable): return list(itertools.filterfalse(predicate, iterable))
+def islice(iterable, *args): return list(itertools.islice(iterable, args))
+def starmap(function, iterable): return list(itertools.starmap(function, iterable))
+def takewhile(predicate, iterable): return list(itertools.takewhile(predicate, iterable))
+def zip_longest(*iterables, fillvalue=None): return list(itertools.zip_longest(iterables, fillvalue))
+def count(start=0, step=1): return list(itertools.count(start, step))
+def cycle(iterable): return list(itertools.cycle(iterable))
+def repeat(object, times=None): return list(itertools.repeat(object, times))
