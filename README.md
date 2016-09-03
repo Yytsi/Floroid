@@ -1,5 +1,5 @@
 # Floroid
-An python-ish language mainly for golfing purposes.
+An (somewhat) python-ish language mainly for golfing purposes.
 
 Import the Florolang module to run Floroid-code. Florolang module imports the 'functions' module, so that has to accessible as well.
 
