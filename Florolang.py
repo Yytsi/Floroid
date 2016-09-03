@@ -1,6 +1,8 @@
 import functions # Contains helper functions.
 import itertools
 import math
+import functools
+import fractions
 
 class Floroid(object):
     def __init__(self, sourceCode):
@@ -136,7 +138,15 @@ class Floroid(object):
             "fk": "upper()",
             "fl": "lower()",
             "fm": "count",
-            "fn": "split"
+            "fn": "split",
+            "fo": "functools.reduce",
+            "ga": "fractions.gcd",
+            "gb": "functions.lcm",
+            "gc": "functions.lcmm",
+            "gd": "functions.gcd",
+            "ge": "functions.gcdm",
+            "gf": "functions.lowest",
+            "gg": "functions.highest"
         }
 
         parsed = self.sourceCode # The (result) parsed string.
