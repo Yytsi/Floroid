@@ -31,7 +31,7 @@ class Floroid(object):
             "D": "[::-1]",
             "E": "return ",
             "F": " if ",
-            "G": "else ",
+            "G": " else ",
             "H": " or ",
             "I": " in ",
             "J": "split()",
@@ -62,7 +62,7 @@ class Floroid(object):
             "ai": " enumerate",
             "aj": " round",
             "ak": "break",
-            "al": "elif",
+            "al": "elif ",
             "am": " [::2]",
             "an": "except",
             "ao": " functions.isPrime",
@@ -168,7 +168,9 @@ class Floroid(object):
             "hk": " functions.pureBinInt",
             "hl": " functions.fromHexStr",
             "hm": " functions.fromBinStr",
-            "hn": " functions.toASCIICharacters"
+            "hn": " functions.toASCIICharacters",
+            "ho": "if ",
+            "ia": "else",
         }
 
         parsed = self.sourceCode # The (result) parsed string.
