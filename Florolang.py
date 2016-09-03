@@ -167,7 +167,8 @@ class Floroid(object):
             "hj": " functions.pureHexInt",
             "hk": " functions.pureBinInt",
             "hl": " functions.fromHexStr",
-            "hm": " functions.fromBinStr"
+            "hm": " functions.fromBinStr",
+            "hn": " functions.toASCIICharacters"
         }
 
         parsed = self.sourceCode # The (result) parsed string.
