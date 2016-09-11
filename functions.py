@@ -89,7 +89,7 @@ def sieveOfAtkin(end):
     for x in range(1, x_max + 1):
         x2 += xd
         xd += 6
-        if x2 >= end: y_min = (((int(ceil(math.sqrt(x2 - end))) - 1) << 1) - 2) << 1
+        if x2 >= end: y_min = (((int(math.ceil(math.sqrt(x2 - end))) - 1) << 1) - 2) << 1
         n, n_diff = ((x*x + x) << 1) - 1, (((x-1) << 1) - 2) << 1
         for d in range(n_diff, y_min, -8):
             if n % 12 == 11:
